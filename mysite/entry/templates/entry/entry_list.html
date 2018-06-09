@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <title>Bhutia Dictionary</title>
+        
+        <link rel="stylesheet" href="stylesheet/entry.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+         <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+    </head>
+        <nav>
+            <div class="navigation-container">
+            <div class="navigation">
+                <div id="Logo">
+                     <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>          
+                </div>
+               
+                <form>
+                    <div class="input-field">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                </form>
+
+            </div>
+
+            </div>
+        </nav>
+    <body>
+        <section class="hero">
+           
+            <div class="definition"> 
+                
+                {% for entry in entrys %}
+                
+                <h1 class="col-2-3">{{entry.bhutia}}</h1>
+                <br>
+                <p>Category: {{entry.category}} </p>
+                <br>
+                <p>English Translation: {{entry.english}}</p>
+                <br>
+                
+    
+                <p>Tibetan Script: {{entry.tibetan}}</p>
+                {% endfor %}
+                
+            </div>
+           
+            
+            
+        </section>
+
+
+
+    </body>
+</html>
