@@ -11,6 +11,6 @@ def home(request):
 
 def entry_list(request):
     entrys = entry.objects.all()
-    return render(request, 'entry/entry.html', {"entrys" : entrys})
+    return render(request, 'entry/entry_list.html', {"entrys" : entrys})
 
    
