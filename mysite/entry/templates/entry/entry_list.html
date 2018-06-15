@@ -16,12 +16,11 @@
                      <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>          
                 </div>
                
-                <form>
+                <form action="/entry/" method="get"> 
                     <div class="input-field">
                         <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search..." />
-                    </div>
-                </form>
+      <input type="search" id="search" placeholder="Search..." name="q" />
+      
 
             </div>
 
@@ -31,9 +30,15 @@
         <section class="hero">
            
             <div class="definition"> 
+              
                 
-                {% for entry in entrys %}
-                
+
+                    {% if error %}
+                <h1 class="col-2-3">Term Not Found.</h1>
+                    {% endif %}
+
+                    {% if not error %}
+                    {% for entry in entrys %}
                 <h1 class="col-2-3">{{entry.bhutia}}</h1>
                 <br>
                 <p>Category: {{entry.category}} </p>
@@ -44,6 +49,8 @@
     
                 <p>Tibetan Script: {{entry.tibetan}}</p>
                 {% endfor %}
+                {% endif %}
+
                 
             </div>
            

@@ -17,37 +17,21 @@ def search(request):
             return render(request, 'entry/entry_list.html',
                           {'entrys': entrys, 'query': q})
         else:
-            return HttpResponse("Term unavailable")
+            error = True
+            return render(request, 'entry/entry_list.html', {'error': error})
 
     else:
-        return HttpResponse('Please submit a search term.')
-
+        error = True
+        return render(request, 'entry/entry_list.html', {'error': error})
+#
 #
 # def search(request):
-#     if 'q' in request.GET and request.GET['q']:
+#     error = False
+#     if 'q' in request.GET:
 #         q = request.GET['q']
-#         found = entry.objects.filter(bhutia__icontains=q)
-#         if found:
-#
-#             entries = entry.objects.get(bhutia=q)
-#
-#             return render(request, 'entry/entry_list.html',
-#                           {'entries': entries, 'query': q})
-#             #return HttpResponse(entries)
-#
+#         if not q:
+#             error = True
 #         else:
-#             return HttpResponse("Term unavailable")
-#
-#
-#     else:
-#         return HttpResponse('Please submit a search term.')
-
-
-
-
-
-# def entry_list(request):
-#     entrys = entry.objects.all()
-#     return render(request, 'entry/entry_list.html', {"entrys" : entrys})
-#
-#
+#             books = entry.objects.filter(bhutia__icontains=q)
+#             return render(request, 'entry/entry_list.html', {'books': books, 'query': q})
+#     return render(request, 'index.html', {'error': error})
