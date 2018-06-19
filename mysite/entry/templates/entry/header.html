@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <title>Bhutia Dictionary</title>
+        
+        <link rel="stylesheet" href="stylesheet/entry.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+         <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+    </head>
+        <nav>
+            <div class="navigation-container">
+            <div class="navigation">
+                <div id="Logo">
+                     <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>          
+                </div>
+
+                 <form action="/entry/" method="get"> 
+                    <div class="input-field">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" placeholder="Search..." name="q" />
+      
+
+            </div>
+
+            </div>
+        </nav>
