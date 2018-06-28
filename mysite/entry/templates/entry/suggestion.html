@@ -1,0 +1,38 @@
+{% load staticfiles %}
+    {% include "entry/header.html" %}   
+    <body>
+        <section class="hero">
+           
+            <div class="definition"> 
+              
+                
+
+                    {% if error %}
+                <h1 class="col-2-3">Term Not Found.</h1>
+                    {% endif %}
+
+                    {% if not error %}
+                    {% for entry in entrys %}
+                <h1 class="col-2-3">{{entry.bhutia}}</h1>
+                <br>
+                <p>Category: {{entry.category}} </p>
+                <br>
+                <p>English Translation: {{entry.english}}</p>
+                <br>
+                
+    
+                <p>Tibetan Script: {{entry.tibetan}}</p>
+                {% endfor %}
+                {% endif %}
+
+                
+            </div>
+           
+            
+            
+        </section>
+
+
+
+    </body>
+</html>

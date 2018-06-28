@@ -1,21 +1,34 @@
 {% load staticfiles %}
-
-
     {% include "entry/header.html" %}
-               
-               
     <body>
         <section class="hero">
            
             <div class="definition"> 
-              
+            		{% if query %}
+                        {% for entry in query %}
+                <h1 class="col-2-3">{{entry.bhutia}}</h1>
+                <br>
+                <p>Category: {{entry.category}} </p>
+                <br>
+                <p>English Translation: {{entry.english}}</p>
+                <br>
                 
-
-                    {% if error %}
+    
+                <p>Tibetan Script: {{entry.tibetan}}</p>
+                {% endfor %}
+            		{% endif %}
+                
+                    {% if not entrys and not query%}
                 <h1 class="col-2-3">Term Not Found.</h1>
                     {% endif %}
 
-                    {% if not error %}
+                    {% if not error and not query%}
+
+
+                    {% if entrys %}
+                    <p> Did you mean? </p>
+                    {% endif %}
+
                     {% for entry in entrys %}
                 <h1 class="col-2-3">{{entry.bhutia}}</h1>
                 <br>
