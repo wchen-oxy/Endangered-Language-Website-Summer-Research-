@@ -53,7 +53,7 @@ Begin body
 =========
 */
 
-html { 
+html {
   background-color: #ee6e73 }
 
 
@@ -77,7 +77,7 @@ h1 a {
 
 
 #Logo {
-	width: 500px;
+	width: 540px;
 	text-align: center;
 	display: inline-block;
 }
@@ -123,19 +123,106 @@ box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
 .navigation input#search::-webkit-input-placeholder {
    color: #65737e;
 }
- 
+
 .navigation  input#search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
+   color: #65737e;
 }
- 
+
 .navigation  input#search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
-}
- 
-.navigation  input#search:-ms-input-placeholder {  
-   color: #65737e;  
+   color: #65737e;
 }
 
+.navigation  input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+
+
+#search-and-option{
+  width: 650px
+}
+
+/*
+begin list item/search option selections
+*/
+li{
+  list-style-type: none;
+  position: relative;
+}
+
+#options {
+
+  float:right;
+  display:inline-block;
+
+}
+
+li a {
+    font-size: 16px;
+    color: white;
+    display: block;
+    line-height: 60px;
+    padding: 0 26px;
+    text-decoration: none;
+    border-left: 1px solid #2e2e2e;
+    font-family: Montserrat, sans-serif;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+li a:hover {
+    background-color: #ec5f64;
+
+}
+
+input[type="button"] {
+	width:100%;
+	text-align: left;
+	font-size: 16px;
+	color:white;
+	background-color: #232323;
+	border-style:none;
+	display: block;
+	line-height: 60px;
+	padding: 0 26px;
+	text-decoration: none;
+	font-family: Montserrat, sans-serif;
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+
+input[type="button"]:hover  {
+    background-color: #ec5f64;
+}
+
+/*
+begin hover drop down
+*/
+#options a{
+    border-left: 0 none;
+}
+#options&gt;a {
+    background-image: url(triangle.png);
+    background-position: 85% center;
+    background-repeat: no-repeat;
+    padding-right: 42px;
+}
+.subnav {
+    visibility: hidden;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 650px;
+    height: auto;
+    opacity: 0;
+    transition: all 0.1s;
+    background: #232323;
+}
+.subnav li {
+    float: none;
+}
 
 
 
+#options:hover .subnav {
+    visibility: visible;
+    top: 90%;
+    opacity: 1;
+}

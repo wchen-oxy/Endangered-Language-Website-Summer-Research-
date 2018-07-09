@@ -13,38 +13,7 @@ from django.http import HttpRequest, HttpResponseRedirect as redirect
 def home(request):
     return render(request, 'index.html')
 
-# def search(request):
-#     #checks if there is a match at all
-#     if 'q' in request.GET and request.GET['q']:
-#         q = request.GET['q']
-#         entrys = entry.objects.filter(bhutia__icontains=q)
-#         if entrys:
-#             return render(request, 'entry/entry_list.html',
-#                           {'entrys': entrys, 'query': q})
-#         else:
-#             error = True
-#             return render(request, 'entry/entry_list.html', {'error': error})
-#
-#     else:
-#         error = True
-#         return render(request, 'entry/entry_list.html', {'error': error})
-#
-# def search(request):
-#     error = False
-#     if 'q' in request.GET:
-#         q = request.GET['q']
-#         if not q:
-#             error = True
-#         else:
-#             entrys = entry.objects.filter(bhutia__icontains=q)
-#             length = len(entrys)
-#             #run comparisons
-#             if length != 1:
-#
-#                 return render(request, 'entry/entry_list.html', {'entrys': entrys, 'query': q})
-#             return render(request,  'entry/entry_list.html', {'entrys': entrys, 'query': q})
-#         return render(request, 'entry/entry_list.html', {'error': error})
-
+'''
 def search(request):
     error = False
     if 'q' in request.GET:
@@ -54,8 +23,33 @@ def search(request):
         else:
             exact_entry = entry.objects.filter(bhutia__iexact=q)
             entrys = entry.objects.filter(bhutia__icontains=q)
-            
+
             #run comparisons
 
             return render(request,  'entry/entry_list.html', {'entrys': entrys, 'query': exact_entry})
+        return render(request, 'entry/entry_list.html', {'error': error})
+'''
+
+def search(request):
+    error = False
+    if 'q' in request.GET:
+        q = request.GET['q']
+
+        if not q:
+            error = True
+        else:
+            if request.path == "/entry/bhutia_english/":
+                exact_entry = entry.objects.filter(bhutia__iexact=q)
+                entrys = entry.objects.filter(bhutia__icontains=q)
+                return render(request, 'entry/entry_list.html', {'entrys': entrys, 'query': exact_entry})
+
+            if request.path == "/entry/english_bhutia/":
+                exact_entry = entry.objects.filter(english__iexact=q)
+                entrys = entry.objects.filter(english__icontains=q)
+                return render(request, 'entry/entry_list.html', {'entrys': entrys, 'query': exact_entry})
+
+            if request.path == "/entry/tibetan_bhutia/":
+                exact_entry = entry.objects.filter(tibetan__iexact=q)
+                entrys = entry.objects.filter(tibetan__icontains=q)
+                return render(request, 'entry/entry_list.html', {'entrys': entrys, 'query': exact_entry})
         return render(request, 'entry/entry_list.html', {'error': error})
