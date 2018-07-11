@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,176 +53,191 @@ Begin body
 =========
 */
 
+a {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+		Introduced in IE 10.
+		See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+}
 html {
-  background-color: #ee6e73 }
+	background-color: #ee6e73 }
+
+
+	.navigation-container {
+		position: fixed;
+		width: 92%;
+		height: 10%;
+		top: 40%;
+		left: 50%;
+		right: 50%;
+		transform: translate(-24%);
+
+	}
+
+
+	h1 a {
+		color: white;
+		padding-left: 45px;
+		text-decoration: none;
+		font: 300 45px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	}
+
+
+	#Logo {
+		width: 540px;
+		text-align: center;
+		display: inline-block;
+	}
 
 
 
-.navigation-container {
-	position: fixed;
-	top: 45%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	/*
+	Begin things for search bar
+	*/
 
-}
+	.navigation input#search {
+		width: 83.07692%;
+		height: 75%;
+		background: #fcfcfc;
+		border: none;
+		font-size: 10pt;
+		float: left;
+		color: #63717f;
+		padding-left: 20px;
+		padding-right: 15px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		border-style: solid;
+		border-color:#f9f9f9;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+		transition: box-shadow 0.3s ease-in-out;
+	}
 
+	input:focus,
+	select:focus,
+	textarea:focus,
+	button:focus {
+		outline: none;
+	}
 
-h1 a {
-    color: white;
-    padding-left: 45px;
-    text-decoration: none;
-    font: 300 45px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	.navigation input#search:hover {
+		-webkit-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
+		-moz-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
+		box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
+	}
 
-}
+	.navigation input#search::-webkit-input-placeholder {
+		color: #65737e;
+	}
 
+	.navigation  input#search:-moz-placeholder { /* Firefox 18- */
+		color: #65737e;
+	}
 
-#Logo {
-	width: 540px;
-	text-align: center;
-	display: inline-block;
-}
+	.navigation  input#search::-moz-placeholder {  /* Firefox 19+ */
+		color: #65737e;
+	}
 
-
-
-/*
-Begin things for search bar
-*/
-
-.navigation input#search {
-	 width: 540px;
-  height: 50px;
-	background: #fcfcfc;
-  border: none;
-  font-size: 10pt;
-  float: left;
-  color: #63717f;
-  padding-left: 20px;
-  padding-right: 15px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border-style: solid;
-  border-color:#f9f9f9;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-
-.navigation input#search:hover {
- -webkit-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
--moz-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
- }
-
-.navigation input#search::-webkit-input-placeholder {
-   color: #65737e;
-}
-
-.navigation  input#search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;
-}
-
-.navigation  input#search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;
-}
-
-.navigation  input#search:-ms-input-placeholder {
-   color: #65737e;
-}
+	.navigation  input#search:-ms-input-placeholder {
+		color: #65737e;
+	}
 
 
-#search-and-option{
-  width: 650px
-}
+	#search-and-option{
+		width: 650px
+	}
 
-/*
-begin list item/search option selections
-*/
-li{
-  list-style-type: none;
-  position: relative;
-}
+	/*
+	begin list item/search option selections
+	*/
+	li{
+		list-style-type: none;
+		position: relative;
+	}
 
-#options {
+	#options {
+		height:85%;
 
-  float:right;
-  display:inline-block;
+		float:right;
+		display:inline-block;
 
-}
+	}
 
-li a {
-    font-size: 16px;
-    color: white;
-    display: block;
-    line-height: 60px;
-    padding: 0 26px;
-    text-decoration: none;
-    border-left: 1px solid #2e2e2e;
-    font-family: Montserrat, sans-serif;
-    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-li a:hover {
-    background-color: #ec5f64;
+	li a {
+		font-size: 100%;
+		color: white;
+		display: block;
+		line-height: 55px;
+		padding: 0 26px;
+		text-decoration: none;
+		border-left: 1px solid #2e2e2e;
+		font-family: Montserrat, sans-serif;
+		text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+	}
+	li a:hover {
+		background-color: #ec5f64;
 
-}
+	}
 
-input[type="button"] {
-	width:100%;
-	text-align: left;
-	font-size: 16px;
-	color:white;
-	background-color: #232323;
-	border-style:none;
-	display: block;
-	line-height: 60px;
-	padding: 0 26px;
-	text-decoration: none;
-	font-family: Montserrat, sans-serif;
-	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
+	button {
+		width:100%;
+		text-align: left;
+		font-size: 16px;
+		color:white;
+		background-color: #232323;
+		border-style:none;
+		display: block;
+		line-height: 60px;
+		padding: 0 26px;
+		text-decoration: none;
+		font-family: Montserrat, sans-serif;
+		text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+	}
 
 
-input[type="button"]:hover  {
-    background-color: #ec5f64;
-}
+	button:hover  {
+		background-color: #ec5f64;
+	}
 
-/*
-begin hover drop down
-*/
-#options a{
-    border-left: 0 none;
-}
-#options&gt;a {
-    background-image: url(triangle.png);
-    background-position: 85% center;
-    background-repeat: no-repeat;
-    padding-right: 42px;
-}
-.subnav {
-    visibility: hidden;
-    position: absolute;
-    top: 110%;
-    right: 0;
-    width: 650px;
-    height: auto;
-    opacity: 0;
-    transition: all 0.1s;
-    background: #232323;
-}
-.subnav li {
-    float: none;
+	button:active {
+    background-color: #d6575c;
 }
 
 
 
-#options:hover .subnav {
-    visibility: visible;
-    top: 90%;
-    opacity: 1;
-}
+
+	/*
+	begin hover drop down
+	*/
+	#options a{
+		border-left: 0 none;
+	}
+
+	.subnav {
+		visibility: hidden;
+		position: absolute;
+		top: 110%;
+		right: 0;
+		width: 650px;
+		height: auto;
+		opacity: 0;
+		transition: all 0.1s;
+		background: #232323;
+	}
+	.subnav li {
+		float: none;
+	}
+
+	#options:hover .subnav {
+		visibility: visible;
+		top: 90%;
+		opacity: 1;
+	}

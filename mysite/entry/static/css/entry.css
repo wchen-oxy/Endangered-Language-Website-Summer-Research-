@@ -50,23 +50,52 @@ table {
 Begin Main Body
 ===============
 */
-nav {
+
+a {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+		Introduced in IE 10.
+		See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+	*/
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/*The above is just used to make sure that the text isn't highlightable in the text box */
+
+#navbar {
 	color:#fff;
 	background-color: #ee6e73;
 	width:100%;
-	height:60px;	
+
+	display: inline-block;
+
 }
 
-.navigation input#search {
-	 width: 400px;
-  height: 50px;
+#Logo {
+	width: 36%;
+	display: inline-block;
+	margin-right: 1rem;
+	white-space: nowrap;
+	float:left;
+}
+
+#Searchbar {
+	width: 63%;
+}
+
+input#search {
+	width: 25rem;
+  height: 3.2rem;
 	background: #fcfcfc;
   border: none;
-  font-size: 10pt;
+  font-size: 0.8em;
   float: left;
   color: #63717f;
   padding-left: 20px;
-  padding-right: 15px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -75,6 +104,7 @@ nav {
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   transition: box-shadow 0.3s ease-in-out;
 }
+/* above is for search bar */
 
 input:focus,
 select:focus,
@@ -84,51 +114,48 @@ button:focus {
 }
 
 
-.navigation input#search:hover {
+input#search:hover {
  -webkit-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
 -moz-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
 box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
  }
 
-.navigation input#search::-webkit-input-placeholder {
+input#search::-webkit-input-placeholder {
    color: #65737e;
 }
- 
-.navigation  input#search:-moz-placeholder { /* Firefox 18- */
-   color: #65737e;  
+
+input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;
 }
- 
-.navigation  input#search::-moz-placeholder {  /* Firefox 19+ */
-   color: #65737e;  
+
+input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;
 }
- 
-.navigation  input#search:-ms-input-placeholder {  
-   color: #65737e;  
+
+input#search:-ms-input-placeholder {
+   color: #65737e;
+}
+
+
+p {
+	font-family: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1 a {
     color: white;
-    padding-left: 45px;
+    margin-left: 2rem;
     text-decoration: none;
-    font: 300 45px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 300 2.7em "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 
 
-#Logo {
-	width: 500px;
-	text-align: center;
-	display: inline-block;
-	float:left;
-}
 
 
 
 form {
-	width: 500px;
 	float: left;
-	display: inline-block;
-	margin-top: 0.4%;
+	padding: 0.4%;
 	}
 
 /*
@@ -136,12 +163,12 @@ form {
 Begin Body
 =========
 */
-body {	
+body {
 	background-color: #fcfcfc;
 }
 .col-2-3 {
 	font-size: 50px;
-	font: 50px "Verdana", "Helvetica", "Arial", sans-serif;
+	font: 50px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: black;
 }
 
@@ -152,12 +179,91 @@ body {
 	margin:auto;
 	border-radius: 5px;
 	padding: 35px;
+	height:100%;
 }
 
 .definition {
 	margin-top: 5%;
 }
 
+/*
+begin list item/search option selections
+*/
+li{
+	list-style-type: none;
+	position: relative;
+}
+
+#options {
+	background-color: #ee6e73;
+	height:3em;
+	float:left;
+	display:inline-block;
+
+}
+
+li a {
+	font-size: 100%;
+	color: white;
+	display: block;
+	line-height: 55px;
+	padding: 0 26px;
+	text-decoration: none;
+	border-left: 1px solid #2e2e2e;
+	font-family: Montserrat, sans-serif;
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+li a:hover {
+	background-color: #ec5f64;
+
+}
+
+button {
+	width:100%;
+	text-align: left;
+	font-size: 16px;
+	color:white;
+	background-color: #232323;
+	border-style:none;
+	display: block;
+	line-height: 60px;
+	padding: 0 26px;
+	text-decoration: none;
+	font-family: Montserrat, sans-serif;
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
 
 
+button:hover  {
+	background-color: #ec5f64;
+}
 
+button:active {
+	background-color: #d6575c;
+}
+/*
+begin hover drop down
+*/
+#options a{
+	border-left: 0 none;
+}
+.subnav {
+	visibility: hidden;
+	position: absolute;
+	top: 110%;
+	right: 0;
+	width: 507px;
+	height: auto;
+	opacity: 0;
+	transition: all 0.1s;
+	background: #232323;
+}
+.subnav li {
+	float: none;
+}
+
+#options:hover .subnav {
+	visibility: visible;
+	top: 116%;
+	opacity: 1;
+}

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Bhutia Dictionary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -13,27 +14,27 @@
         <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
       </div>
       <section id="search-and-option">
-        <li id="searchbar"> <form name="myform" action="/entry/bhutia_english/" method="get">
-          <div class="input-field">
-            <span class="icon"><i class="fa fa-search"></i>
-            </span>
-            <input type="search" id="search" placeholder="Search..." name="q" />
+        <div id="full searchbar"
+        <li id="searchbar">
+          <form name="myform" action="/entry/bhutia_english/" method="get">
+            <div class="input-field">
+              <span class="icon"><i class="fa fa-search"></i>
+              </span>
+              <input type="search" id="search" placeholder="Search..." name="q" />
+            </div>
+          </li>
+          <li id="options">
+            <a>Options</a>
+            <ul class="subnav">
+              <li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
+                <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
+                  <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
+                  </form>
+                </ul>
+              </li>
+            </div>
+            </section>
           </div>
-        </li>
-        <li id="options">
-          <a href="#">Options</a>
-          <ul class="subnav">
-            <!--<li><input id="engToBhut" type="button" name="operation" onclick="Translation(eToB)" value="English to Bhutia"/></li>
-            <li><input type="button" name="operation" onclick="document.pressed=this.value" value="Bhutia to English"/></li>
-            <li><button id="button" type="button">Change color</button></li> -->
-<li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
-            <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
-                <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
-                </form>
-              </ul>
-            </li>
-          </section>
         </div>
-      </div>
-    </body>
-    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+      </body>
+      <script type="text/javascript" src="{% static 'js/index.js' %}"></script>

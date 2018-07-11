@@ -53,3 +53,7 @@ def search(request):
                 entrys = entry.objects.filter(tibetan__icontains=q)
                 return render(request, 'entry/entry_list.html', {'entrys': entrys, 'query': exact_entry})
         return render(request, 'entry/entry_list.html', {'error': error})
+
+def autocorrect(q):
+    
+    return

@@ -1,27 +1,30 @@
 {% load staticfiles %}
 
 <html lang="en">
-    <head>
-        <title>Bhutia Dictionary</title>
-        
-        <link rel="stylesheet" href="stylesheet/entry.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
-         <link rel="stylesheet" href="{% static 'css/entry.css' %}">
-    </head>
-        <nav>
-            <div class="navigation-container">
-            <div class="navigation">
-                <div id="Logo">
-                     <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>          
-                </div>
-
-                 <form action="/entry/" method="get"> 
-                    <div class="input-field">
-                        <span class="icon"><i class="fa fa-search"></i></span>
+<head>
+  <title>Bhutia Dictionary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheet/entry.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+  <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+</head>
+<div id="navbar">
+    <div id="Logo">
+      <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
+    </div>
+    <div class="Searchbar">
+    <form name="myform" action="/entry/bhutia_english/" method="get">
+      <span class="icon"><i class="fa fa-search"></i></span>
       <input type="search" id="search" placeholder="Search..." name="q" />
-      
-
-            </div>
-
-            </div>
-        </nav>
+      <li id="options">
+        <a>Options</a>
+        <ul class="subnav">
+          <li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
+            <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
+              <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
+              </form>
+            </ul>
+          </li>
+        </div>
+      </div>
+      <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
