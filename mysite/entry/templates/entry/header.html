@@ -16,15 +16,12 @@
     <form name="myform" action="/entry/bhutia_english/" method="get">
       <span class="icon"><i class="fa fa-search"></i></span>
       <input type="search" id="search" placeholder="Search..." name="q" />
-      <li id="options">
-        <a>Options</a>
-        <ul class="subnav">
-          <li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
-            <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
-              <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
-              </form>
-            </ul>
-          </li>
+      <select id="translation" name="translation">
+          <option value="bhutToEng">Bhutia to English</option>
+          <option value="engToBhut">English to Bhutia</option>
+          <option value="tibToBhut">Tibetan to Bhutia</option>
+  </select>
+  <button id="enter" name="myform" action="/entry/bhutia_english/" method="get">Search</button>
         </div>
       </div>
       <script type="text/javascript" src="{% static 'js/index.js' %}"></script>

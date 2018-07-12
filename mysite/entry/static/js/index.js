@@ -1,38 +1,16 @@
 
-var engToBhut = document.getElementById("engToBhut");
-var bhutToEng = document.getElementById("bhutToEng");
-var tibToBhut = document.getElementById("tibToBhut");
+document.addEventListener('DOMContentLoaded',function() {
+    document.querySelector('select[name="translation"]').onchange=changeEventHandler;
+},false);
+
+function changeEventHandler(event) {
+    // You can use “this” to refer to the selected element.
 
 
-/*
-engToBhut.addEventListener("click", change(engToBhut.value));
-bhutToEng.addEventListener("click", change(bhutToEng.value));
-sansToBhut.addEventListener("click", change(sansToBhut.value));
+    if(event.target.value == "engToBhut") document.myform.setAttribute("action", "/entry/english_bhutia/");
 
+    if (event.target.value == "bhutToEng") document.myform.setAttribute("action", "/entry/bhutia_english/");
 
+    if (event.target.value == "tibToBhut")   document.myform.setAttribute("action", "/entry/tibetan_bhutia/");
 
-*/
-
-/*
-function random(number) {
-  return Math.floor(Math.random()*number);
-}
-function bgChange(e) {
-  var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-  e.target.style.backgroundColor = rndCol;
-  event.stopPropagation();
-  console.log(e);
-}
-*/
-engToBhut.onclick =  function() {
-  document.myform.setAttribute("action", "/entry/english_bhutia/");
-  console.log("1");
-}
-bhutToEng.onclick =  function() {
-  document.myform.setAttribute("action", "/entry/bhutia_english/");
-  console.log("2");
-}
-tibToBhut.onclick =  function() {
-    document.myform.setAttribute("action", "/entry/tibetan_bhutia/");
-  console.log("3");
 }

@@ -13,9 +13,6 @@
 
   <body>
   <div class="bg w3-display-container  w3-text-white">
-    <div class="w3-display-topleft w3-padding-large w3-xlarge">
-      Logo
-    </div>
     <div class="w3-display-middle">
       <div id="Logo">
          <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
@@ -26,13 +23,16 @@
              <input type="search" id="search" placeholder="Search..." name="q" />
            </div>
          </li>
-         <li id="options">
-           <a>Options</a>
-           <ul class="subnav">
-             <li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
-               <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
-                 <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
-                 </form>
+
+    <select id="translation" name="translation">
+        <option value="bhutToEng">Bhutia to English</option>
+        <option value="engToBhut">English to Bhutia</option>
+        <option value="tibToBhut">Tibetan to Bhutia</option>
+</select>
+<button name="myform" action="/entry/bhutia_english/" method="get">Search</button>
+
+
+
 
 
   </div>

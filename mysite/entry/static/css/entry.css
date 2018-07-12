@@ -76,7 +76,7 @@ a {
 }
 
 #Logo {
-	width: 36%;
+	width: 43%;
 	display: inline-block;
 	margin-right: 1rem;
 	white-space: nowrap;
@@ -149,10 +149,6 @@ h1 a {
 
 }
 
-
-
-
-
 form {
 	float: left;
 	padding: 0.4%;
@@ -189,81 +185,11 @@ body {
 /*
 begin list item/search option selections
 */
-li{
-	list-style-type: none;
-	position: relative;
-}
-
-#options {
-	background-color: #ee6e73;
-	height:3em;
-	float:left;
-	display:inline-block;
-
-}
-
-li a {
-	font-size: 100%;
-	color: white;
-	display: block;
-	line-height: 55px;
-	padding: 0 26px;
-	text-decoration: none;
-	border-left: 1px solid #2e2e2e;
-	font-family: Montserrat, sans-serif;
-	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-li a:hover {
-	background-color: #ec5f64;
-
-}
-
-button {
-	width:100%;
-	text-align: left;
-	font-size: 16px;
-	color:white;
-	background-color: #232323;
-	border-style:none;
-	display: block;
-	line-height: 60px;
-	padding: 0 26px;
-	text-decoration: none;
-	font-family: Montserrat, sans-serif;
-	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
-
-button:hover  {
-	background-color: #ec5f64;
-}
-
-button:active {
-	background-color: #d6575c;
-}
-/*
-begin hover drop down
-*/
-#options a{
-	border-left: 0 none;
-}
-.subnav {
-	visibility: hidden;
-	position: absolute;
-	top: 110%;
-	right: 0;
-	width: 507px;
-	height: auto;
-	opacity: 0;
-	transition: all 0.1s;
-	background: #232323;
-}
-.subnav li {
-	float: none;
-}
-
-#options:hover .subnav {
-	visibility: visible;
-	top: 116%;
-	opacity: 1;
+@media screen and (max-width: 900px) {
+  h1 a {
+    font-size: calc(16px + 10 * ((100vw - 320px) / 680));
+  }
+	#Searchbar input#search  {
+		width: 100%;
+	}
 }
