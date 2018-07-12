@@ -1,40 +1,43 @@
 {% load staticfiles %}
 <html lang="en">
-<head>
-  <title>Bhutia Dictionary</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<title>Bhutia Dictionary</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-</head>
-<body>
-  <div class="navigation-container">
-    <div class="navigation">
+
+
+
+
+
+  <body>
+  <div class="bg w3-display-container  w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      Logo
+    </div>
+    <div class="w3-display-middle">
       <div id="Logo">
-        <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
-      </div>
-      <section id="search-and-option">
-        <div id="full searchbar"
-        <li id="searchbar">
-          <form name="myform" action="/entry/bhutia_english/" method="get">
-            <div class="input-field">
-              <span class="icon"><i class="fa fa-search"></i>
-              </span>
-              <input type="search" id="search" placeholder="Search..." name="q" />
-            </div>
-          </li>
-          <li id="options">
-            <a>Options</a>
-            <ul class="subnav">
-              <li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
-                <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
-                  <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
-                  </form>
-                </ul>
-              </li>
-            </div>
-            </section>
-          </div>
-        </div>
-      </body>
-      <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+         <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
+         <form name="myform" action="/entry/bhutia_english/" method="get">
+           <div class="input-field">
+             <span class="icon"><i class="fa fa-search"></i>
+             </span>
+             <input type="search" id="search" placeholder="Search..." name="q" />
+           </div>
+         </li>
+         <li id="options">
+           <a>Options</a>
+           <ul class="subnav">
+             <li><button id="bhutToEng" type="button" value="bhutToEng">Bhutia to English</li>
+               <li><button id="engToBhut" type="button" value="engToBhut">English to Bhutia</li>
+                 <li><button id="tibToBhut" type="button" value="tibToBhut">Tibetan to Bhutia</li>
+                 </form>
+
+
+  </div>
+
+  </body>
+  </html>
+
+ <script type="text/javascript" src="{% static 'js/index.js' %}"></script>

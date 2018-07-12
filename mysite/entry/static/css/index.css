@@ -1,243 +1,70 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+body,h1, h1 a {font:300 45px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-decoration: none;
+
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+body, html {height: 100%}
+.bg {
+	background-color: #ee6e73;
+		min-height: 100%;
+		background-position: center;
+		background-size: cover;
 }
 
 
-/*
-=========
-Begin body
-=========
-*/
-
-a {
-	-moz-user-select: -moz-none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-
-	/*
-		Introduced in IE 10.
-		See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-	*/
-	-ms-user-select: none;
-	user-select: none;
-}
-html {
-	background-color: #ee6e73 }
-
-
-	.navigation-container {
-		position: fixed;
-		width: 92%;
-		height: 10%;
-		top: 40%;
-		left: 50%;
-		right: 50%;
-		transform: translate(-24%);
-
-	}
-
-
-	h1 a {
-		color: white;
-		padding-left: 45px;
-		text-decoration: none;
-		font: 300 45px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-	}
-
-
-	#Logo {
-		width: 540px;
-		text-align: center;
-		display: inline-block;
-	}
-
-
-
-	/*
-	Begin things for search bar
-	*/
-
-	.navigation input#search {
-		width: 83.07692%;
-		height: 75%;
-		background: #fcfcfc;
-		border: none;
-		font-size: 10pt;
-		float: left;
-		color: #63717f;
-		padding-left: 20px;
-		padding-right: 15px;
-		-webkit-border-radius: 2px;
-		-moz-border-radius: 2px;
-		border-radius: 2px;
-		border-style: solid;
-		border-color:#f9f9f9;
-		box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-		transition: box-shadow 0.3s ease-in-out;
-	}
-
-	input:focus,
-	select:focus,
-	textarea:focus,
-	button:focus {
-		outline: none;
-	}
-
-	.navigation input#search:hover {
-		-webkit-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
-		-moz-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
-		box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
-	}
-
-	.navigation input#search::-webkit-input-placeholder {
-		color: #65737e;
-	}
-
-	.navigation  input#search:-moz-placeholder { /* Firefox 18- */
-		color: #65737e;
-	}
-
-	.navigation  input#search::-moz-placeholder {  /* Firefox 19+ */
-		color: #65737e;
-	}
-
-	.navigation  input#search:-ms-input-placeholder {
-		color: #65737e;
-	}
-
-
-	#search-and-option{
-		width: 650px
-	}
-
-	/*
-	begin list item/search option selections
-	*/
-	li{
-		list-style-type: none;
-		position: relative;
-	}
-
-	#options {
-		height:85%;
-
-		float:right;
-		display:inline-block;
-
-	}
-
-	li a {
-		font-size: 100%;
-		color: white;
-		display: block;
-		line-height: 55px;
-		padding: 0 26px;
-		text-decoration: none;
-		border-left: 1px solid #2e2e2e;
-		font-family: Montserrat, sans-serif;
-		text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-	}
-	li a:hover {
-		background-color: #ec5f64;
-
-	}
-
-	button {
-		width:100%;
-		text-align: left;
-		font-size: 16px;
-		color:white;
-		background-color: #232323;
-		border-style:none;
-		display: block;
-		line-height: 60px;
-		padding: 0 26px;
-		text-decoration: none;
-		font-family: Montserrat, sans-serif;
-		text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-	}
-
-
-	button:hover  {
-		background-color: #ec5f64;
-	}
-
-	button:active {
-    background-color: #d6575c;
+/*begin dumb code */
+.navigation input#search {
+	min-height: 50px;
+	width: 500px;
+	height: 75%;
+	background: #fcfcfc;
+	border: none;
+	font-size: 10pt;
+	float: left;
+	color: #63717f;
+	padding-left: 20px;
+	padding-right: 15px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border-style: solid;
+	border-color:#f9f9f9;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: box-shadow 0.3s ease-in-out;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
 
+.navigation input#search:hover {
+	-webkit-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
+	-moz-box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
+	box-shadow: 0px 0px 14px 1px rgba(125,125,125,0.44);
+}
 
+.navigation input#search::-webkit-input-placeholder {
+	color: #65737e;
+}
 
-	/*
-	begin hover drop down
-	*/
-	#options a{
-		border-left: 0 none;
-	}
+.navigation  input#search:-moz-placeholder { /* Firefox 18- */
+	color: #65737e;
+}
 
-	.subnav {
-		visibility: hidden;
-		position: absolute;
-		top: 110%;
-		right: 0;
-		width: 650px;
-		height: auto;
-		opacity: 0;
-		transition: all 0.1s;
-		background: #232323;
-	}
-	.subnav li {
-		float: none;
-	}
+.navigation  input#search::-moz-placeholder {  /* Firefox 19+ */
+	color: #65737e;
+}
 
-	#options:hover .subnav {
-		visibility: visible;
-		top: 90%;
-		opacity: 1;
-	}
+.navigation  input#search:-ms-input-placeholder {
+	color: #65737e;
+}
+
+input {
+	font-size: 50%;
+}
+
+li button, #options {
+	font-size: 50%;
+}
