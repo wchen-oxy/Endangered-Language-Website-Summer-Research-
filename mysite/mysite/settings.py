@@ -24,7 +24,7 @@ SECRET_KEY = 'd@^jzw@=(v8a-j&vzs9*#kqbi)nfi96pz+$(t9wxe!@%b-i)jh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.oxycreates.org', '.heroku.com', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.oxycreates.org', '.heroku.com', '.herokuapp.com', '134.69.134.234']
 
 
 # Application definition
