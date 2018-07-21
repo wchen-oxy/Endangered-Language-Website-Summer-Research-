@@ -9,19 +9,19 @@
   <link rel="stylesheet" href="{% static 'css/entry.css' %}">
 </head>
 <div id="navbar">
-    <div id="Logo">
-      <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
-    </div>
-    <div class="Searchbar">
+  <div id="Logo">
+    <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
+  </div>
+  <div class="Searchbar">
     <form name="myform" action="/entry/bhutia_english/" method="get">
       <span class="icon"><i class="fa fa-search"></i></span>
       <input type="search" id="search" placeholder="Search..." name="q" />
       <select id="translation" name="translation">
-          <option value="bhutToEng">Bhutia to English</option>
-          <option value="engToBhut">English to Bhutia</option>
-          <option value="tibToBhut">Tibetan to Bhutia</option>
-  </select>
-  <button id="enter" name="myform" action="/entry/bhutia_english/" method="get">Search</button>
-        </div>
-      </div>
-      <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+        <option id="be" value="bhutToEng">Bhutia to English</option>
+        <option id="eb" value="engToBhut">English to Bhutia</option>
+        <option id="tb" value="tibToBhut">Tibetan to Bhutia</option>
+      </select>
+      <button id="enter" name="myform" action="/entry/bhutia_english/" method="get">Search</button>
+    </div>
+  </div>
+  <script rel="preload"type="text/javascript" src="{% static 'js/index.js' %}"></script>

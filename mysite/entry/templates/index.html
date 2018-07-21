@@ -1,43 +1,32 @@
 {% load staticfiles %}
 <html lang="en">
-<title>Bhutia Dictionary</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+  <title>Bhutia Dictionary</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-
-
-
-
-
-  <body>
+</head>
+<body>
   <div class="bg w3-display-container  w3-text-white">
     <div class="w3-display-middle">
       <div id="Logo">
-         <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
-         <form name="myform" action="/entry/bhutia_english/" method="get">
-           <div class="input-field">
-             <span class="icon"><i class="fa fa-search"></i>
-             </span>
-             <input type="search" id="search" placeholder="Search..." name="q" />
-           </div>
-         </li>
-
-    <select id="translation" name="translation">
-        <option value="bhutToEng">Bhutia to English</option>
-        <option value="engToBhut">English to Bhutia</option>
-        <option value="tibToBhut">Tibetan to Bhutia</option>
-</select>
-<button name="myform" action="/entry/bhutia_english/" method="get">Search</button>
-
-
-
-
-
-  </div>
-
-  </body>
-  </html>
-
- <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+        <h1> <a href="/" class="Logo">The Bhutia Dictionary</a> </h1>
+        <form id="target" name="myform" action="/entry/bhutia_english/" method="get">
+          <div class="input-field">
+            <span class="icon"><i class="fa fa-search"></i>
+            </span>
+            <input type="search" id="search" placeholder="Search..." name="q" />
+          </div>
+        </li>
+        <select id="translation" name="translation">
+          <option id="be" value="bhutToEng">Bhutia to English</option>
+          <option id="eb" value="engToBhut">English to Bhutia</option>
+          <option id="tb" value="tibToBhut">Tibetan to Bhutia</option>
+        </select>
+        <button class="target" name="myform" action="/entry/bhutia_english/" method="get">Search</button>
+      </div>
+    </body>
+    </html>
+    <script rel="preload" type="text/javascript" src="{% static 'js/index.js' %}"></script>
